@@ -1,5 +1,8 @@
-function App() {
-  return <div className="App">hello webpack</div>;
-}
+import React from "react";
+import "./App.css";
 
-export default App;
+export default class App extends React.Component {
+  render() {
+    return <div className="App">hello webpack</div>;
+  }
+}
