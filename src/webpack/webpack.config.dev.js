@@ -9,8 +9,8 @@ module.exports = {
     rules: require("./webpack.rules"),
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, "../../dist"),
   },
   plugins: require("./webpack.plugins"),
 };
