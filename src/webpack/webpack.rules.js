@@ -16,16 +16,19 @@ module.exports = [
     use: ["style-loader", "css-loader"],
   },
   {
+    // html loader
+    test: /\.html$/,
+    use: ["html-loader"],
+  },
+  {
     // Images Loader
     test: /\.(gif|jpe?g|tiff|png|webp|bmp|svg)$/,
-    dependency: { not: ["url"] },
-    use: [
-      {
-        loader: "file-loader",
-        options: {
-          name: "[path][name].[ext]",
-        },
+    // dependency: { not: ["url"] },
+    use: {
+      loader: "file-loader",
+      options: {
+        name: "[name][hash].[ext]",
       },
-    ],
+    },
   },
 ];
