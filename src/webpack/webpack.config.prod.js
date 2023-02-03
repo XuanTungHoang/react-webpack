@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     index: "./src/index.js",
   },
@@ -9,9 +9,9 @@ module.exports = {
     rules: require("./webpack.rules"),
   },
   output: {
-    filename: "[name].js",
-    chunkFilename: "[name].chunk.js",
-    path: "/",
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].chunk.js",
+    path: path.resolve(__dirname, "../../dist"),
   },
   plugins: require("./webpack.plugins"),
 };
